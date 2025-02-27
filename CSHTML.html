@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign In</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background-color: white;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        #api {
+            width: 100%;
+        }
+        
+        .entry {
+            margin-bottom: 20px;
+        }
+        
+        .entry .entry-item {
+            width: 100%;
+            display: block;
+        }
+        
+        .entry .entry-item input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .entry .entry-item label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .buttons {
+            margin-top: 30px;
+        }
+        
+        .buttons button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .buttons button:hover {
+            background-color: #0063b1;
+        }
+        
+        .error {
+            color: #a61e0c;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign In</h1>
+        <div id="api"></div>
+    </div>
+    
+    <script>
+        // This ensures that input fields and the button have the same width
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            if (form) {
+                // Make sure all inputs and buttons have consistent styling
+                const inputFields = form.querySelectorAll('input');
+                inputFields.forEach(function(input) {
+                    input.parentElement.classList.add('entry-item');
+                    input.parentElement.parentElement.classList.add('entry');
+                });
+                
+                // Make sure continue button has proper styling
+                const continueButton = form.querySelector('button[id*="continue"]');
+                if (continueButton) {
+                    continueButton.parentElement.classList.add('buttons');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
